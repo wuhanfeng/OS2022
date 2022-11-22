@@ -14,7 +14,7 @@ int main(const char *args)
 	puts(args); // make run mainargs=xxx
 	puts("\"\n");
 
-	splash();
+	// splash();
 
 	puts("Press any key to see its key code...\n");
 	int next_frame = 0, key, FPS = 60;
