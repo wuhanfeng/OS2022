@@ -27,6 +27,7 @@ int main(const char *args)
 		while ( (key = read_key()) != AM_KEY_NONE )
 		{
 			if(key == AM_KEY_ESCAPE) halt(0);
+			printf("%d\n", key);
 			kbd_event(key); // 处理键盘事件
 		}
 		game_progress();
