@@ -12,9 +12,23 @@ int main(const char *args)
 	splash();
 
 	puts("Press any key to see its key code...\n");
+	int next_frame = 0, key, FPS = 60;
+
 	while (1)
 	{
-		print_key();
+		while(uptime() < next_frame);
+		while ((key = read_key()) != AM_KEY_NONE)
+		{
+			kbd_event(key); // 处理键盘事件
+		}
+		game_progress();
+		screen_update();
+		next_frame += 1000 / FPS;
 	}
 	return 0;
+}
+
+void game_progress()
+{
+
 }

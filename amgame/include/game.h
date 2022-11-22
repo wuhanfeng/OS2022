@@ -5,6 +5,14 @@
 
 void splash();
 void print_key();
-static inline void puts(const char *s) {
-  for (; *s; s++) putch(*s);
+int read_key();
+int uptime();
+void kbd_event();
+void game_progress();
+void screen_update();
+
+static inline void puts(const char *s)
+{
+	for (; *s; s++)
+		putch(*s);
 }

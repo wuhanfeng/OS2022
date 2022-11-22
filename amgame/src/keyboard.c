@@ -17,3 +17,17 @@ void print_key()
 		puts("\n");
 	}
 }
+
+int read_key()
+{
+	AM_INPUT_KEYBRD_T event = {.keycode = AM_KEY_NONE};
+	ioe_read(AM_INPUT_KEYBRD, &event);
+	while (event.keycode != AM_KEY_NONE && event.keydown)
+		return event.keycode;
+	return 0;
+}
+
+void kbd_event(int key)
+{
+	
+}
