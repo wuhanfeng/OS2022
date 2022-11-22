@@ -75,9 +75,9 @@ void screen_update()
 {
 	init();
 	printf("screen_update\n");
-	for (int x = 0; x * SIDE <= w; x++)
+	for (int x = 0; x  <= w; x++)
 	{
-		for (int y = 0; y * SIDE <= h; y++)
+		for (int y = 0; y <= h; y++)
 		{
 			if (x == ball.x && y == ball.y)
 				// draw_tile(x * SIDE, y * SIDE, SIDE, SIDE, 0xffffff); // white
