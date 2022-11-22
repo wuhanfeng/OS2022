@@ -57,6 +57,7 @@ void kbd_event(int key)
 	case AM_KEY_DOWN:
 		ball.dx = 0;
 		ball.dy = -1;
+		printf("dx = %d, dy = %d\n", ball.dx, ball.dy);
 		break;	
 	default:
 		break;
