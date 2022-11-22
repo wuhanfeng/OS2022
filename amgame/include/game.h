@@ -11,6 +11,13 @@ void kbd_event();
 void game_progress();
 void screen_update();
 
+struct ball_ctr
+{
+	int x;
+	int y;
+};
+
+
 static inline void puts(const char *s)
 {
 	for (; *s; s++)

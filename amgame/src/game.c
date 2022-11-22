@@ -1,5 +1,10 @@
 #include <game.h>
 
+struct ball_ctr ball = {
+	.x = 100,
+	.y = 100
+};
+
 // Operating system is a C program!
 int main(const char *args)
 {
@@ -31,5 +36,6 @@ int main(const char *args)
 
 void game_progress()
 {
-
+	ball.x += 1;
+	ball.y += 1;
 }

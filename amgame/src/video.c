@@ -2,7 +2,7 @@
 
 #define SIDE 16
 static int w, h;
-
+extern struct ball_ctr ball;
 static void init()
 {
 	AM_GPU_CONFIG_T info = {0};
@@ -70,10 +70,9 @@ void splash()
 	}
 }
 
-
-
-
 void screen_update()
 {
-
+	draw_ball( ball.x * SIDE, ball.y * SIDE);
 }
+
+
