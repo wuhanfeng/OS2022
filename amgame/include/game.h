@@ -15,6 +15,8 @@ struct ball_ctr
 {
 	int x;
 	int y;
+	int dx;
+	int dy;
 };
 
 

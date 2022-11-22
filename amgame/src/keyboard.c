@@ -27,7 +27,3 @@ int read_key()
 	return 0;
 }
 
-void kbd_event(int key)
-{
-	
-}

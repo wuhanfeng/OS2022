@@ -2,7 +2,9 @@
 
 struct ball_ctr ball = {
 	.x = 1,
-	.y = 1
+	.y = 1,
+	.dx = 1,
+	.dy = 1
 };
 
 // Operating system is a C program!
@@ -35,8 +37,35 @@ int main(const char *args)
 	return 0;
 }
 
+
+void kbd_event(int key)
+{
+	switch (key)
+	{
+	case AM_KEY_LEFT:
+		ball.dx = -1;
+		ball.dy = 0;
+		break;
+	case AM_KEY_RIGHT:
+		ball.dx = 1;
+		ball.dy = 0;
+		break;
+	case AM_KEY_UP:
+		ball.dx = 0;
+		ball.dy = 1;
+		break;
+	case AM_KEY_DOWN:
+		ball.dx = 0;
+		ball.dy = -1;
+		break;	
+	default:
+		break;
+	}
+
+}
+
 void game_progress()
 {
-	ball.x += 1;
-	ball.y += 1;
+	ball.x += ball.dx;
+	ball.y += ball.dy;
 }
