@@ -11,6 +11,7 @@ void print_key()
 	ioe_read(AM_INPUT_KEYBRD, &event);
 	if (event.keycode != AM_KEY_NONE && event.keydown)
 	{
+		if(strcmp(key_names[event.keycode],"ESC") == 0)	halt(0);
 		puts("Key pressed: ");
 		puts(key_names[event.keycode]);
 		puts("\n");
