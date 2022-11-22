@@ -31,8 +31,8 @@ int main(const char *args)
 		}
 		game_progress();
 		screen_update();
-		next_frame += 100000 / FPS;
-		printf("key = %d, uptime() = %d, next_frame = %d\n", key, uptime(), next_frame);
+		next_frame += 10000000 / FPS;
+		// printf("key = %d, uptime() = %d, next_frame = %d\n", key, uptime(), next_frame);
 	}
 	return 0;
 }
@@ -66,6 +66,7 @@ void kbd_event(int key)
 
 void game_progress()
 {
+	printf("dx = %d, dy = %d\n", ball.dx, ball.dy);
 	ball.x += ball.dx;
 	ball.y += ball.dy;
 }
