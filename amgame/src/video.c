@@ -81,9 +81,9 @@ void screen_update()
 		{
 			if (x == ball.x && y == ball.y)
 				// draw_tile(x * SIDE, y * SIDE, SIDE, SIDE, 0xffffff); // white
-				draw_ball( x * SIDE, y * SIDE, 0xFFFFFF);
+				draw_ball( x, y, 0xFFFFFF);
 			else
-				draw_ball( x * SIDE, y * SIDE, 0);
+				draw_ball( x, y, 0);
 		}
 	}
 	
