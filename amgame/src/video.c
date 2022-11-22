@@ -57,10 +57,10 @@ static void draw_ball(int x, int y)
 void splash()
 {
 	init();
-	// printf("w = %d, h = %d\n", w, h);	w = 640, h = 480
-	for (int x = 0; x * SIDE <= 16; x++)
+	printf("w = %d, h = %d\n", w, h);	
+	for (int x = 0; x * SIDE <= w; x++)
 	{
-		for (int y = 0; y * SIDE <= 16; y++)
+		for (int y = 0; y * SIDE <= h; y++)
 		{
 			if ((x & 1) ^ (y & 1))
 			{
