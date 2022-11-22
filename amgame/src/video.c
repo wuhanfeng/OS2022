@@ -11,23 +11,47 @@ static void init()
 	h = info.height;
 }
 
-static void draw_tile(int x, int y, int w, int h, uint32_t color)
+// static void draw_tile(int x, int y, int w, int h, uint32_t color)
+// {
+// 	uint32_t pixels[w * h]; // WARNING: large stack-allocated memory
+// 	AM_GPU_FBDRAW_T event = {
+// 		.x = x,
+// 		.y = y,
+// 		.w = w,
+// 		.h = h,
+// 		.sync = 1,
+// 		.pixels = pixels,
+// 	};
+// 	for (int i = 0; i < w * h; i++)
+// 	{
+// 		pixels[i] = color;
+// 	}
+// 	ioe_write(AM_GPU_FBDRAW, &event);
+// }
+
+static void draw_ball(int x, int y)
 {
 	uint32_t pixels[w * h]; // WARNING: large stack-allocated memory
 	AM_GPU_FBDRAW_T event = {
-		.x = x,
-		.y = y,
-		.w = w,
-		.h = h,
+		.x = x-8,
+		.y = y-8,
+		.w = 16,
+		.h = 16,
 		.sync = 1,
 		.pixels = pixels,
 	};
-	for (int i = 0; i < w * h; i++)
+	for (int i = 0; i < 16 ; i ++)
 	{
-		pixels[i] = color;
+		for(int j = 0; j < 16; j ++)
+			if( (i-8)*(i-8) + (j-8)*(j-8) < 64 )
+				pixels[i*16+j] = 0xFFFFFF;
+			else
+				pixels[i*16+j] = 0;
 	}
 	ioe_write(AM_GPU_FBDRAW, &event);
 }
+
+
 
 void splash()
 {
@@ -39,11 +63,14 @@ void splash()
 		{
 			if ((x & 1) ^ (y & 1))
 			{
-				draw_tile(x * SIDE, y * SIDE, SIDE, SIDE, 0xffff00); // white
+				// draw_tile(x * SIDE, y * SIDE, SIDE, SIDE, 0xffffff); // white
+				draw_ball( x * SIDE, y * SIDE);
 			}
 		}
 	}
 }
+
+
 
 
 void screen_update()
