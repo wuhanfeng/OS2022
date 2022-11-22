@@ -31,7 +31,7 @@ static void init()
 
 static void draw_ball(int x, int y)
 {
-	uint32_t pixels[w * h]; // WARNING: large stack-allocated memory
+	uint32_t pixels[16 * 16]; // WARNING: large stack-allocated memory
 	AM_GPU_FBDRAW_T event = {
 		.x = x-8,
 		.y = y-8,
