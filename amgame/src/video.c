@@ -72,6 +72,7 @@ void splash()
 
 void screen_update()
 {
+	printf("screen_update\n");
 	draw_ball( ball.x * SIDE, ball.y * SIDE);
 }
 
