@@ -29,7 +29,7 @@ static void init()
 // 	ioe_write(AM_GPU_FBDRAW, &event);
 // }
 
-static void draw_ball(int x, int y)
+static void draw_ball(int x, int y, uint32_t color)
 {
 	uint32_t pixels[16 * 16]; // WARNING: large stack-allocated memory
 	AM_GPU_FBDRAW_T event = {
@@ -45,7 +45,7 @@ static void draw_ball(int x, int y)
 	{
 		for(int j = 0; j < 16; j ++)
 			if( (i-8)*(i-8) + (j-8)*(j-8) < 64 )
-				pixels[i*16+j] = 0xFFFFFF;
+				pixels[i*16+j] = color;
 			else
 				pixels[i*16+j] = 0;
 	}
@@ -54,28 +54,39 @@ static void draw_ball(int x, int y)
 
 
 
-void splash()
-{
-	init();
-	printf("w = %d, h = %d\n", w, h);	
-	for (int x = 0; x * SIDE <= 16; x++)
-	{
-		for (int y = 0; y * SIDE <= 16; y++)
-		{
-			if ((x & 1) ^ (y & 1))
-			{
-				// draw_tile(x * SIDE, y * SIDE, SIDE, SIDE, 0xffffff); // white
-				draw_ball( x * SIDE, y * SIDE);
-			}
-		}
-	}
-}
+// void splash()
+// {
+// 	init();
+// 	printf("w = %d, h = %d\n", w, h);	
+// 	for (int x = 0; x * SIDE <= 16; x++)
+// 	{
+// 		for (int y = 0; y * SIDE <= 16; y++)
+// 		{
+// 			if ((x & 1) ^ (y & 1))
+// 			{
+// 				// draw_tile(x * SIDE, y * SIDE, SIDE, SIDE, 0xffffff); // white
+// 				draw_ball( x * SIDE, y * SIDE);
+// 			}
+// 		}
+// 	}
+// }
 
 void screen_update()
 {
 	init();
 	printf("screen_update\n");
-	draw_ball( ball.x * SIDE, ball.y * SIDE);
+	for (int x = 0; x * SIDE <= w; x++)
+	{
+		for (int y = 0; y * SIDE <= h; y++)
+		{
+			if (x == ball.x && y == ball.y)
+				// draw_tile(x * SIDE, y * SIDE, SIDE, SIDE, 0xffffff); // white
+				draw_ball( x * SIDE, y * SIDE, 0xFFFFFF);
+			else
+				draw_ball( x * SIDE, y * SIDE, 0);
+		}
+	}
+	
 }
 
 
