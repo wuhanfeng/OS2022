@@ -44,19 +44,19 @@ void kbd_event(int key)
 {
 	switch (key)
 	{
-	case AM_KEY_LEFT:
+	case AM_KEY_LEFT-4:
 		ball.dx = -1;
 		ball.dy = 0;
 		break;
-	case AM_KEY_RIGHT:
+	case AM_KEY_RIGHT-4:
 		ball.dx = 1;
 		ball.dy = 0;
 		break;
-	case AM_KEY_UP:
+	case AM_KEY_UP+4:
 		ball.dx = 0;
 		ball.dy = 1;
 		break;
-	case AM_KEY_DOWN:
+	case AM_KEY_DOWN+4:
 		ball.dx = 0;
 		ball.dy = -1;
 		// printf("dx = %d, dy = %d\n", ball.dx, ball.dy);
