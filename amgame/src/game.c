@@ -27,8 +27,8 @@ int main(const char *args)
 		while ( (key = read_key()) != AM_KEY_NONE )
 		{
 			if(key == AM_KEY_ESCAPE) halt(0);
-			// printf("%d\n", key);
-			print_key();
+			printf("%d\n", key);
+			// print_key();
 			kbd_event(key); // 处理键盘事件
 		}
 		game_progress();
@@ -59,7 +59,7 @@ void kbd_event(int key)
 	case AM_KEY_DOWN:
 		ball.dx = 0;
 		ball.dy = -1;
-		printf("dx = %d, dy = %d\n", ball.dx, ball.dy);
+		// printf("dx = %d, dy = %d\n", ball.dx, ball.dy);
 		break;	
 	default:
 		break;
