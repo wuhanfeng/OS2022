@@ -58,9 +58,9 @@ void splash()
 {
 	init();
 	printf("w = %d, h = %d\n", w, h);	
-	for (int x = 0; x * SIDE <= 10; x++)
+	for (int x = 0; x * SIDE <= 16; x++)
 	{
-		for (int y = 0; y * SIDE <= 10; y++)
+		for (int y = 0; y * SIDE <= 16; y++)
 		{
 			if ((x & 1) ^ (y & 1))
 			{
