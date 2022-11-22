@@ -22,14 +22,14 @@ int main(const char *args)
 	while (1)
 	{
 		while(uptime() < next_frame);
-		while ((key = read_key()) != AM_KEY_NONE)
+		while ( (key = read_key()) != AM_KEY_NONE )
 		{
 			if(key == AM_KEY_ESCAPE) halt(0);
 			kbd_event(key); // 处理键盘事件
 		}
 		game_progress();
 		screen_update();
-		next_frame += 1000 / FPS;
+		next_frame += 1000000 / FPS;
 		printf("uptime() = %d, next_frame = %d\n", uptime(), next_frame);
 	}
 	return 0;
