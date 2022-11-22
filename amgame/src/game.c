@@ -37,6 +37,6 @@ int main(const char *args)
 
 void game_progress()
 {
-	ball.x += 1;
-	ball.y += 1;
+	ball.x += 0;
+	ball.y += 0;
 }
