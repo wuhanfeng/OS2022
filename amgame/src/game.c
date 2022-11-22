@@ -17,7 +17,7 @@ int main(const char *args)
 	// splash();
 
 	puts("Press any key to see its key code...\n");
-	int next_frame = 0, key, FPS = 60;
+	int next_frame = 0, key, FPS = 10;
 
 	while (1)
 	{
