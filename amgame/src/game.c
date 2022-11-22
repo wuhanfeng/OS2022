@@ -1,8 +1,8 @@
 #include <game.h>
 
 struct ball_ctr ball = {
-	.x = 100,
-	.y = 100
+	.x = 1,
+	.y = 1
 };
 
 // Operating system is a C program!
@@ -37,6 +37,6 @@ int main(const char *args)
 
 void game_progress()
 {
-	ball.x += 0;
-	ball.y += 0;
+	ball.x += 1;
+	ball.y += 1;
 }
