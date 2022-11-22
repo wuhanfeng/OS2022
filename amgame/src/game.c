@@ -29,7 +29,7 @@ int main(const char *args)
 		}
 		game_progress();
 		screen_update();
-		next_frame += 1000 / FPS;
+		next_frame += 1000000 / FPS;
 		printf("uptime() = %d\n", uptime());
 	}
 	return 0;
