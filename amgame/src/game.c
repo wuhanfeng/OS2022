@@ -75,4 +75,6 @@ void game_progress()
 	ball.last_y = ball.y;
 	ball.x += ball.dx;
 	ball.y += ball.dy;
+	printf("x = %d, y = %d, last_x = %d, last_y = %d\n", 
+		ball.x, ball.y, ball.last_x, ball.last_y);
 }
