@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
 		sprintf(path, "/proc/%d/stat", pid);
 		fp = fopen(path, "r");
 		fscanf(fp,"%d %s %c %d",&_pid, comm, &state, &ppid);
+		fclose(fp);
 		printf("_pid = %d, comm = %s, state = %c, ppid = %d", _pid, comm, state, ppid);
 	}
 
