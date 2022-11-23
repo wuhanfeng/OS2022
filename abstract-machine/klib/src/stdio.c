@@ -128,7 +128,7 @@ static int parse_para(char *out, const char *fmt, va_list ap)
 	unsigned int* pd;
 	unsigned int ud;
 	__uint64_t ld;
-	
+
 	while (*fmt)
 	{
 		if (*fmt == '%')
@@ -137,17 +137,14 @@ static int parse_para(char *out, const char *fmt, va_list ap)
 			switch (*fmt++)
 			{
 			case 's': /* string */
-				
 				s = va_arg(ap, char *);
 				p_out = get_parse_out_s(s, p_out);
 				break;
 			case 'd': /* int */
-				
 				d = va_arg(ap, int);
 				p_out = get_parse_out_d(d, p_out);
 				break;
 			case 'p':
-				
 				pd = va_arg(ap, unsigned int*);
 				p_out = get_parse_out_p(pd, p_out);
 				break;
@@ -159,7 +156,6 @@ static int parse_para(char *out, const char *fmt, va_list ap)
 				switch (*fmt++)
 				{
 				case 'd':
-					
 					ld = va_arg(ap, __uint64_t);
 					p_out = get_parse_out_ld(ld, p_out);
 					break;
