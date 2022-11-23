@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
 	{
 		s = dent1->d_name;
 		pid_t pid = (pid_t) strtol(s, NULL, 10);
+		if(pid <=0 ) continue;
 		printf("%s, pid = %d", s, pid);
 		sprintf(path, "/proc/%d/stat", pid);
 		fp = fopen(path, "r");
