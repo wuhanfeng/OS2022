@@ -98,6 +98,8 @@ void screen_update()
 	draw_ball( ball.last_x, ball.last_y, 0 );
 	draw_ball( ball.x, ball.y, 0xFFFFFF );
 	
+	printf("x = %d, y = %d, last_x = %d, last_y = %d, dx = %d, dy = %d\n", 
+		ball.x, ball.y, ball.last_x, ball.last_y, ball.dx, ball.dy);
 	
 }
 
