@@ -74,18 +74,21 @@ static void draw_ball(int x, int y, uint32_t color)
 void screen_update()
 {
 	init();
-	printf("screen_update\n");
-	for (int x = 0; x  <= w; x++)
-	{
-		for (int y = 0; y <= h; y++)
-		{
-			if (x == ball.x && y == ball.y)
-				// draw_tile(x * SIDE, y * SIDE, SIDE, SIDE, 0xffffff); // white
-				draw_ball( x, y, 0xFFFFFF );
-			// else
-				// draw_ball( x, y, 0);
-		}
-	}
+
+	draw_ball( ball.x, ball.y, 0xFFFFFF );
+
+	// printf("screen_update\n");
+	// for (int x = 0; x  <= w; x++)
+	// {
+	// 	for (int y = 0; y <= h; y++)
+	// 	{
+	// 		if (x == ball.x && y == ball.y)
+	// 			// draw_tile(x * SIDE, y * SIDE, SIDE, SIDE, 0xffffff); // white
+	// 			draw_ball( x, y, 0xFFFFFF );
+	// 		// else
+	// 			// draw_ball( x, y, 0);
+	// 	}
+	// }
 	
 }
 
