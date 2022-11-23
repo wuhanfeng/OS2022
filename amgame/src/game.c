@@ -33,7 +33,7 @@ int main(const char *args)
 		}
 		game_progress();
 		screen_update();
-		next_frame += 1000000 / FPS;
+		next_frame += 10000000 / FPS;
 		// printf("key = %d, uptime() = %d, next_frame = %d\n", key, uptime(), next_frame);
 	}
 	return 0;
