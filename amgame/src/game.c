@@ -33,7 +33,7 @@ int main(const char *args)
 		}
 		game_progress();
 		screen_update();
-		next_frame += 10000000 / FPS;
+		next_frame += 20000000 / FPS;
 		// printf("key = %d, uptime() = %d, next_frame = %d\n", key, uptime(), next_frame);
 	}
 	return 0;
@@ -73,7 +73,7 @@ void game_progress()
 	// printf("dx = %d, dy = %d\n", ball.dx, sizeof(unsigned long));
 	ball.last_x = ball.x;
 	ball.last_y = ball.y;
-	ball.x += ball.dx;
-	ball.y += ball.dy;
+	ball.x += ball.dx * 4;
+	ball.y += ball.dy * 4;
 
 }
