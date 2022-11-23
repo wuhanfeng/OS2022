@@ -16,17 +16,21 @@ int main(int argc, char *argv[])
 	}
 
 	DIR* d1 = opendir("/proc/");
-	char* s;
+	FILE* fp;
+	char* s, path[128], comm[128], state;
 	struct dirent* dent1;
+	int _pid, ppid;
 	dent1 = readdir(d1);
 
 	while((dent1 = readdir(d1)) !=NULL)
 	{
 		s = dent1->d_name;
-		printf("%s, is_digit = %d, pid = %d\n", s, (strspn(s, "0123456789")==strlen(s)),
-		(pid_t) strtol(s, NULL, 10) );
-
-
+		pid_t pid = (pid_t) strtol(s, NULL, 10);
+		printf("%s, pid = %d", s, pid);
+		sprintf(path, "/proc/%d/stat", pid);
+		fp = fopen(path, "r");
+		fscanf(fp,"%d %s %c %d",&_pid, comm, &state, &ppid);
+		printf("_pid = %d, comm = %s, state = %c, ppid = %d", _pid, comm, state, ppid);
 	}
 
 	closedir(d1);
