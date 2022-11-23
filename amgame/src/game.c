@@ -54,11 +54,11 @@ void kbd_event(int key)
 		break;
 	case AM_KEY_UP+4:
 		ball.dx = 0;
-		ball.dy = 1;
+		ball.dy = -1;
 		break;
 	case AM_KEY_DOWN+4:
 		ball.dx = 0;
-		ball.dy = -1;
+		ball.dy = 1;
 		// printf("dx = %d, dy = %d\n", ball.dx, ball.dy);
 		break;	
 	default:
