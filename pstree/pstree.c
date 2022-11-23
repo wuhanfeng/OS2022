@@ -23,7 +23,10 @@ int main(int argc, char *argv[])
 	while((dent1 = readdir(d1)) !=NULL)
 	{
 		s = dent1->d_name;
-		printf("%s, is_digit = %d\n", s, (strspn(s, "0123456789")==strlen(s)) );
+		printf("%s, is_digit = %d, pid = %d\n", s, (strspn(s, "0123456789")==strlen(s)),
+		(pid_t) strtol(s, NULL, 10) );
+
+
 	}
 
 	closedir(d1);
