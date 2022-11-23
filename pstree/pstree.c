@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
 		fscanf(fp,"%d %s %c %d", &_pid, comm, &state, &ppid);
 		fclose(fp);
-		printf("_pid = %d, comm = %s, state = %c, ppid = %d", _pid, comm, state, ppid);
+		printf("_pid = %d, comm = %s, state = %c, ppid = %d\n", _pid, comm, state, ppid);
 	}
 
 	closedir(d1);
