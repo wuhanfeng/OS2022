@@ -44,11 +44,11 @@ void kbd_event(int key)
 {
 	switch (key)
 	{
-	case AM_KEY_LEFT-4:
+	case AM_KEY_LEFT+4:
 		ball.dx = -1;
 		ball.dy = 0;
 		break;
-	case AM_KEY_RIGHT-4:
+	case AM_KEY_RIGHT+4:
 		ball.dx = 1;
 		ball.dy = 0;
 		break;
