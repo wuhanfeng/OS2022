@@ -97,7 +97,7 @@ void screen_update()
 	// screen_clear();
 	draw_ball( ball.last_x, ball.last_y, 0 );
 	draw_ball( ball.x, ball.y, 0xFFFFFF );
-
+	printf("x = %d, y = %d, last_x = %d, last_y = %d\n", ball.x, ball.y, ball.last_x, ball.last_y);
 	// printf("screen_update\n");
 	// for (int x = 0; x  <= w; x++)
 	// {
