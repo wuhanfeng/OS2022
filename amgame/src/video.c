@@ -74,9 +74,9 @@ static void draw_ball(int x, int y, uint32_t color)
 
 void screen_clear()
 {
-	for (int x = 0; x * SIDE <= 16; x++)
+	for (int x = 0; x * SIDE <= w; x++)
 	{
-		for (int y = 0; y * SIDE <= 16; y++)
+		for (int y = 0; y * SIDE <= h; y++)
 		{
 			// if ((x & 1) ^ (y & 1))
 			{
