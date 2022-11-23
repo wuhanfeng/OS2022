@@ -29,6 +29,9 @@ int main(int argc, char *argv[])
 		printf("%s, pid = %d", s, pid);
 		sprintf(path, "/proc/%d/stat", pid);
 		fp = fopen(path, "r");
+
+		printf("%s, fp = %p", path, fp);
+
 		fscanf(fp,"%d %s %c %d",&_pid, comm, &state, &ppid);
 		fclose(fp);
 		printf("_pid = %d, comm = %s, state = %c, ppid = %d", _pid, comm, state, ppid);
