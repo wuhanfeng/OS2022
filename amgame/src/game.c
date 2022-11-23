@@ -69,7 +69,8 @@ void kbd_event(int key)
 
 void game_progress()
 {
-	printf("dx = %d, dy = %d\n", ball.dx, ball.dy);
+	
+	printf("dx = %d, dy = %d\n", ball.dx, sizeof(unsigned long));
 	ball.x += ball.dx;
 	ball.y += ball.dy;
 }
