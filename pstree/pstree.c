@@ -4,6 +4,8 @@
 #include <errno.h>
 #include <dirent.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
 int main(int argc, char *argv[])
 {
@@ -14,12 +16,14 @@ int main(int argc, char *argv[])
 	}
 
 	DIR* d1 = opendir("/proc/");
+	char* s;
 	struct dirent* dent1;
 	dent1 = readdir(d1);
 
 	while((dent1 = readdir(d1)) !=NULL)
 	{
-		printf("%s\n", dent1->d_name);
+		s = dent1->d_name;
+		printf("%s, is_digit = %d\n", s, (strspn(s, "0123456789")==strlen(s)) );
 	}
 
 	closedir(d1);
