@@ -1,10 +1,9 @@
 #include <game.h>
 
 struct ball_ctr ball = {
-	.x = 1,
-	.y = 1,
-	.dx = 1,
-	.dy = 1
+	.x = 1, .y = 1,
+	.dx = 1, .dy = 1,
+	.last_x = 0, .last_y = 0
 };
 
 // Operating system is a C program!
@@ -72,6 +71,8 @@ void game_progress()
 {
 	
 	// printf("dx = %d, dy = %d\n", ball.dx, sizeof(unsigned long));
+	ball.last_x = ball.x;
+	ball.last_y = ball.y;
 	ball.x += ball.dx;
 	ball.y += ball.dy;
 }

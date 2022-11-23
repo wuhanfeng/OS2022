@@ -14,10 +14,9 @@ void back_ground();
 
 struct ball_ctr
 {
-	int x;
-	int y;
-	int dx;
-	int dy;
+	int x, y;
+	int dx, dy;
+	int last_x, last_y;
 };
 
 
