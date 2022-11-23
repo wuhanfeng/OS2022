@@ -17,6 +17,7 @@ int main(const char *args)
 	puts("\"\n");
 
 	// splash();
+	back_ground();
 
 	puts("Press any key to see its key code...\n");
 	int next_frame = 0, key, FPS = 60;
@@ -33,7 +34,7 @@ int main(const char *args)
 		}
 		game_progress();
 		screen_update();
-		next_frame += 10000000 / FPS;
+		next_frame += 1000000 / FPS;
 		// printf("key = %d, uptime() = %d, next_frame = %d\n", key, uptime(), next_frame);
 	}
 	return 0;

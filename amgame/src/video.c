@@ -70,7 +70,10 @@ static void draw_ball(int x, int y, uint32_t color)
 // 		}
 // 	}
 // }
-
+void back_ground()
+{
+	init();
+}
 
 void screen_clear()
 {
@@ -89,7 +92,7 @@ void screen_clear()
 
 void screen_update()
 {
-	init();
+	// init();
 
 	// screen_clear();
 	draw_ball( ball.x-ball.dx, ball.y-ball.dy, 0 );

@@ -10,6 +10,7 @@ int uptime();
 void kbd_event();
 void game_progress();
 void screen_update();
+void back_ground();
 
 struct ball_ctr
 {
