@@ -63,9 +63,10 @@ void add_proc(struct Node node)
     {
         // parent = 
         parent_node.pid = node.ppid;
+        LOGD("========3");
         strcpy(parent_node.name, "???");
         parent = new_proc(parent_node);
-        LOGD("========3");
+        
         parent->next = list;
         list = parent;
     }
