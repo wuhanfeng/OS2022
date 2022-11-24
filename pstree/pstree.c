@@ -50,6 +50,8 @@ int main(int argc, char *argv[])
 
 	print_list(head);
 
+	destory_list(head);
+	
 	assert(!argv[argc]);
 	return 0;
 }
