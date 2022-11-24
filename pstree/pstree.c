@@ -50,7 +50,8 @@ int main(int argc, char *argv[])
 
 	closedir(d1);
 
-	print_list(head);
+	printf("%p\n", head);
+	// print_list(head);
 
 	destory_list(head);
 
