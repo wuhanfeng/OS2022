@@ -17,6 +17,20 @@ struct pstree_list
 	struct pstree_list* next;
 };
 
+typedef struct _proc
+{
+    struct Node node;
+    PROC *next, *parent;
+    CHILD* children;
+}PROC;
+
+typedef struct _child
+{
+    PROC* child;
+    CHILD *next;
+}CHILD;
+
+
 struct pstree_list* create_list();
 void add_list(struct pstree_list* head, struct Node node);
 void print_list(struct pstree_list* head);

@@ -20,11 +20,12 @@ int main(int argc, char *argv[])
 	DIR* d1 = opendir("/proc/");
 	FILE* fp;
 	char* s, path[128], comm[128], state;
+
 	struct dirent* dent1;
 	int _pid, ppid;
 	dent1 = readdir(d1);
 
-	struct pstree_list *head = create_list();
+	// struct pstree_list *head = create_list();
 	struct Node node;
 
 	while((dent1 = readdir(d1)) !=NULL)
@@ -43,15 +44,16 @@ int main(int argc, char *argv[])
 		node.pid = pid;
 		node.ppid = ppid;
 		strcpy(node.name, comm);
-		add_list(head, node);
+		add_proc( node );
+		// add_list(head, node);
 	}
 
 	closedir(d1);
 
-	print_list(head);
+	// print_list(head);
 
-	destory_list(head);
-	
+	// destory_list(head);
+
 	assert(!argv[argc]);
 	return 0;
 }
