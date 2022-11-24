@@ -27,7 +27,7 @@ void print_list(struct pstree_list* head)
     struct pstree_list* p = head;
     while (p)
     {
-        printf("Node = %p, pid = %d, ppid = %d, name = %d\n", 
+        printf("Node = %p, pid = %d, ppid = %d, name = %s\n", 
             p, p->node.pid, p->node.ppid, p->node.name);
         p = p->next;
     }
