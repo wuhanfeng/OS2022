@@ -31,6 +31,9 @@ typedef struct _child
 }CHILD;
 
 
+void add_proc(struct Node node);
+
+
 struct pstree_list* create_list();
 void add_list(struct pstree_list* head, struct Node node);
 void print_list(struct pstree_list* head);
