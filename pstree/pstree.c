@@ -47,6 +47,9 @@ int main(int argc, char *argv[])
 	}
 
 	closedir(d1);
+
+	print_list(head);
+
 	assert(!argv[argc]);
 	return 0;
 }
