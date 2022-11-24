@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
 	dent1 = readdir(d1);
 
 	struct pstree_list *head = create_list();
+	printf("%p\n", head);
 	struct Node node;
 
 	while((dent1 = readdir(d1)) !=NULL)
@@ -50,7 +51,7 @@ int main(int argc, char *argv[])
 
 	closedir(d1);
 
-	printf("%p\n", head);
+	
 	// print_list(head);
 
 	destory_list(head);
