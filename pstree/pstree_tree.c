@@ -9,7 +9,7 @@ static PROC* find_proc(pid_t pid)
     PROC* walk;
     for(walk = list; walk; walk = walk->next)
     {
-        LOGD("========3");
+        LOGD("%p========3", walk);
         if(walk->node.pid == pid) return walk;
     }
     return NULL;
