@@ -33,8 +33,8 @@ PROC* new_proc(struct Node node)
     new->children = NULL;
     new->next = NULL;
     new->parent = NULL;
-    list = new;
-    return list;
+    // list = new;
+    return new;
 }
 
 static void rename_proc(PROC* this, struct Node node)
