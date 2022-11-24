@@ -45,7 +45,7 @@ void add_proc(struct Node node)
 {
     PROC* this;
     struct Node parent_node;
-
+    LOGD("========0");
     if( (this = find_proc(node.pid)) != NULL )
     {
         rename_proc(this, node);
@@ -58,6 +58,7 @@ void add_proc(struct Node node)
     }
     // add the parent
     PROC* parent;
+    LOGD("========1");
     if( (parent = find_proc(node.ppid)) == NULL )
     {
         // parent = 
@@ -68,7 +69,7 @@ void add_proc(struct Node node)
         list = parent;
     }
     this->parent = parent;
-    LOGD("========");
+    LOGD("========2");
     add_child(parent, this);
 
 }
