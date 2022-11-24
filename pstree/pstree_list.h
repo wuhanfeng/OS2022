@@ -20,14 +20,14 @@ struct pstree_list
 typedef struct _proc
 {
     struct Node node;
-    PROC *next, *parent;
-    CHILD* children;
+    struct _proc *next, *parent;
+    struct _child *children;
 }PROC;
 
 typedef struct _child
 {
-    PROC* child;
-    CHILD *next;
+    struct _proc *child;
+    struct _child *next;
 }CHILD;
 
 
