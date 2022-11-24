@@ -1,5 +1,7 @@
 #include "pstree_list.h"
 
+#define LOGD(format, ...) printf("[%s:%d] " format "\r\n", __func__, __LINE__, ##__VA_ARGS__ )
+
 static PROC *list = NULL;
 
 static PROC* find_proc(pid_t pid)
@@ -66,7 +68,7 @@ void add_proc(struct Node node)
         list = parent;
     }
     this->parent = parent;
-
+    LOGD("========");
     add_child(parent, this);
 
 }
